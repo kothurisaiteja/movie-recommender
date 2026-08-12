@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-
+const API_URL = "https://movie-recommender-1-p15a.onrender.com";
 function App() {
     const [movie, setMovie] = useState("");
     const [moviePoster, setMoviePoster] = useState(null);
@@ -13,7 +13,7 @@ function App() {
     // LOAD POPULAR MOVIES
     // =========================
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/popular")
+        fetch(`${API_URL}/popular`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to load popular movies");
@@ -44,11 +44,7 @@ function App() {
         setMoviePoster(null);
 
         try {
-            const response = await fetch(
-                `http://127.0.0.1:8000/recommend/${encodeURIComponent(
-                    movie.trim()
-                )}`
-            );
+            const response = await fetch(`${API_URL}/recommend/${encodeURIComponent(movie.trim())}`);
 
             const data = await response.json();
 
