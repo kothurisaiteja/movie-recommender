@@ -1,0 +1,1023 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #080b12;
+    color: #f5f5f5;
+
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+    min-height: 100vh;
+    width: 100%;
+
+    background:
+        radial-gradient(circle at 50% -10%,
+            rgba(124, 58, 237, 0.16),
+            transparent 38%),
+        #080b12;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 72px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(8, 11, 18, 0.88);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    backdrop-filter: blur(14px);
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.logo>span {
+    font-size: 22px;
+}
+
+.logo h2 {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: -0.6px;
+}
+
+.logo h2 span {
+    color: #8b5cf6;
+}
+
+
+/* Navigation */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #a1a1aa;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 520px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 0 80px;
+}
+
+
+/* Badge */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 15px;
+
+    margin-bottom: 24px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(139, 92, 246, 0.28);
+
+    background: rgba(139, 92, 246, 0.08);
+
+    color: #c4b5fd;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Heading */
+
+.hero h1 {
+    margin: 0 0 22px;
+
+    font-size: clamp(44px, 7vw, 70px);
+
+    line-height: 1.04;
+
+    letter-spacing: -3px;
+
+    font-weight: 750;
+}
+
+.hero h1 span {
+    display: block;
+
+    background: linear-gradient(90deg,
+            #a78bfa,
+            #6366f1);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Description */
+
+.hero p {
+    max-width: 650px;
+
+    margin: 0 0 34px;
+
+    color: #9ca3af;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.search-box {
+    width: 100%;
+    max-width: 680px;
+
+    min-height: 64px;
+
+    padding: 6px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    background: #11151f;
+
+    border: 1px solid #272d39;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.28);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+    border-color: rgba(139, 92, 246, 0.6);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.3),
+        0 0 0 3px rgba(139, 92, 246, 0.08);
+}
+
+
+/* Input */
+
+.input-wrapper {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0 14px;
+}
+
+.input-wrapper span {
+    flex-shrink: 0;
+
+    opacity: 0.6;
+
+    font-size: 19px;
+}
+
+.input-wrapper input {
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+.input-wrapper input::placeholder {
+    color: #71717a;
+}
+
+
+/* Recommend button */
+
+.search-box button {
+    height: 52px;
+
+    flex-shrink: 0;
+
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #7c3aed;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.search-box button:hover:not(:disabled) {
+    background: #8b5cf6;
+
+    transform: translateY(-1px);
+}
+
+.search-box button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.search-box button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.65;
+}
+
+
+/* Error */
+
+.error-message {
+    margin-top: 15px !important;
+
+    color: #f87171 !important;
+
+    font-size: 13px !important;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+    margin-bottom: 24px;
+}
+
+.section-header small {
+    color: #8b5cf6;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-header h2 {
+    margin: 6px 0 0;
+
+    color: #f5f5f5;
+
+    font-size: 27px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.7px;
+}
+
+
+/* =========================================================
+   POPULAR MOVIES
+========================================================= */
+
+.popular-section {
+    padding: 10px 0 90px;
+}
+
+
+/* =========================================================
+   RECOMMENDATIONS
+========================================================= */
+
+.recommendations {
+    padding: 25px 0 100px;
+}
+
+
+/* =========================================================
+   MOVIE GRID
+========================================================= */
+
+.movie-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   MOVIE CARD
+========================================================= */
+
+.movie-card {
+    min-width: 0;
+
+    background: #11151f;
+
+    border: 1px solid #252a36;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    cursor: default;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #3b4150;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   POSTER
+========================================================= */
+
+.movie-poster {
+    width: 100%;
+
+    aspect-ratio: 2 / 3;
+
+    height: auto;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #202532;
+}
+
+
+/* =========================================================
+   POSTER PLACEHOLDER
+========================================================= */
+
+.poster-placeholder {
+    width: 100%;
+
+    aspect-ratio: 2 / 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background: #202532;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MOVIE INFORMATION
+========================================================= */
+
+.movie-info {
+    padding: 15px 15px 17px;
+}
+
+.movie-info h3 {
+    margin: 0 0 11px;
+
+    color: #f4f4f5;
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    font-weight: 650;
+
+    white-space: normal;
+}
+
+.movie-details {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    color: #aeb4c0;
+
+    font-size: 12px;
+}
+
+.movie-details span {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SELECTED MOVIE
+========================================================= */
+
+.selected-movie {
+    width: 100%;
+
+    min-height: 290px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 26px;
+
+    margin-bottom: 42px;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(17, 21, 31, 0.95),
+            rgba(13, 16, 24, 0.95));
+
+    border: 1px solid #252a36;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+
+/* Selected poster */
+
+.selected-movie-poster {
+    width: 180px;
+
+    height: 270px;
+
+    flex-shrink: 0;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 11px;
+
+    background: #202532;
+}
+
+
+/* Selected poster unavailable */
+
+.selected-poster-unavailable {
+    width: 180px;
+
+    height: 270px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    background: #202532;
+
+    border-radius: 11px;
+
+    color: #9ca3af;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+/* Selected movie text */
+
+.selected-movie-info {
+    min-width: 0;
+}
+
+.selected-movie-info small {
+    color: #8b5cf6;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.selected-movie-info h2 {
+    margin: 8px 0 0;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.8px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    min-height: 260px;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border: 1px dashed #292e39;
+
+    border-radius: 14px;
+
+    background: rgba(17, 21, 31, 0.5);
+}
+
+.empty-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 14px;
+
+    background: rgba(139, 92, 246, 0.1);
+
+    font-size: 24px;
+}
+
+.empty-state h3 {
+    margin: 0 0 8px;
+
+    font-size: 16px;
+}
+
+.empty-state p {
+    margin: 0;
+
+    color: #71717a;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #52525b;
+
+    font-size: 12px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .container {
+        max-width: 1000px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        padding: 0 30px;
+    }
+
+    .container {
+        padding: 0 24px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 480px;
+
+        padding-top: 55px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 8vw, 60px);
+    }
+
+    .selected-movie {
+        gap: 22px;
+    }
+
+    .selected-movie-poster,
+    .selected-poster-unavailable {
+        width: 160px;
+        height: 240px;
+    }
+
+    .selected-movie-info h2 {
+        font-size: 26px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: 64px;
+
+        padding: 0 20px;
+    }
+
+    .logo h2 {
+        font-size: 17px;
+    }
+
+    .logo>span {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .container {
+        padding: 0 18px;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+
+        padding: 55px 0 60px;
+    }
+
+    .badge {
+        font-size: 11px;
+
+        padding: 7px 12px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 18px;
+    }
+
+    .hero p {
+        font-size: 14px;
+
+        margin-bottom: 28px;
+    }
+
+    /* Search */
+
+    .search-box {
+        flex-direction: column;
+
+        max-width: 100%;
+
+        padding: 0;
+
+        gap: 9px;
+
+        background: transparent;
+
+        border: none;
+
+        box-shadow: none;
+    }
+
+    .input-wrapper {
+        width: 100%;
+
+        height: 54px;
+
+        background: #11151f;
+
+        border: 1px solid #272d39;
+
+        border-radius: 10px;
+
+        padding: 0 13px;
+    }
+
+    .search-box button {
+        width: 100%;
+
+        height: 52px;
+    }
+
+    /* Sections */
+
+    .popular-section,
+    .recommendations {
+        padding-bottom: 65px;
+    }
+
+    .section-header h2 {
+        font-size: 23px;
+    }
+
+    /* Grid */
+
+    .movie-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+
+        margin-top: 20px;
+    }
+
+    .movie-info {
+        padding: 12px;
+    }
+
+    .movie-info h3 {
+        font-size: 14px;
+
+        margin-bottom: 9px;
+    }
+
+    .movie-details {
+        font-size: 11px;
+    }
+
+    /* Selected movie */
+
+    .selected-movie {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        gap: 18px;
+
+        padding: 20px;
+
+        margin-bottom: 30px;
+    }
+
+    .selected-movie-poster,
+    .selected-poster-unavailable {
+        width: 160px;
+
+        height: 240px;
+    }
+
+    .selected-movie-info h2 {
+        font-size: 23px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        padding: 0 14px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+
+        letter-spacing: -1.7px;
+    }
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .movie-poster,
+    .poster-placeholder {
+        aspect-ratio: 2 / 3;
+    }
+
+    .movie-info h3 {
+        font-size: 15px;
+    }
+
+    .selected-movie-poster,
+    .selected-poster-unavailable {
+        width: 150px;
+
+        height: 225px;
+    }
+}
